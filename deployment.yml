@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: rohiniapp-redis
-        image: docker.io/satankumaryadav/redis-app:latest 
+        image: docker.io/rohini1202/redis-app:latest 
         #imagePullPolicy: Never # it is  for local image pull instead of docker hub
         resources:
           limits:
