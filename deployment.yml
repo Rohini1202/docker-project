@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rohini-app
+spec:
+  selector:
+    matchLabels:
+      app: rohini-redis
+  template:
+    metadata:
+      labels:
+        app: rohini-redis
+    spec:
+      containers:
+      - name: rohiniapp-redis
+        image: docker.io/satankumaryadav/redis-app:latest 
+        #imagePullPolicy: Never # it is  for local image pull instead of docker hub
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 6379
